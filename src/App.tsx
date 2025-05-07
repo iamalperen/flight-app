@@ -1,24 +1,30 @@
 import React from 'react';
+import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
 
-function App() {
+import Header from './components/Header';
+import { FlightSearchProvider } from './context/FlightSearchContext';
+import CabinSelection from './pages/CabinSelection/CabinSelection';
+import FlightList from './pages/FlightList/FlightList';
+import Home from './pages/Home/Home';
+
+const App: React.FC = () => {
   return (
-    <div className="min-h-screen bg-gray-100">
-      <header className="bg-white shadow">
-        <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-          <h1 className="text-3xl font-bold text-gray-900">Flight App</h1>
-        </div>
-      </header>
-      <main>
-        <div className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
-          <div className="px-4 py-6 sm:px-0">
-            <div className="border-4 border-dashed border-gray-200 rounded-lg h-96 flex items-center justify-center">
-              <p className="text-gray-500 text-xl">Welcome to Flight App!</p>
-            </div>
+    <FlightSearchProvider>
+      <BrowserRouter>
+        <div className="min-h-screen bg-flightbg">
+          <Header />
+          <div className="max-w-7xl mx-auto w-full px-4">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/flights" element={<FlightList />} />
+              <Route path="/cabin-selection" element={<CabinSelection />} />
+              <Route path="*" element={<Navigate to="/" replace />} />
+            </Routes>
           </div>
         </div>
-      </main>
-    </div>
+      </BrowserRouter>
+    </FlightSearchProvider>
   );
-}
+};
 
 export default App;
