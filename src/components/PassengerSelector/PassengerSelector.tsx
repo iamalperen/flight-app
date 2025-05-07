@@ -101,6 +101,7 @@ const PassengerSelector: React.FC<PassengerSelectorProps> = ({ value, onChange }
               <div className="flex items-center">
                 <button
                   data-testid="passenger-count-decrease"
+                  type="button"
                   className="w-8 h-8 rounded-full border border-gray-300 flex items-center justify-center"
                   onClick={handleDecreaseClick}
                   disabled={isDecreaseDisabled}
@@ -121,6 +122,7 @@ const PassengerSelector: React.FC<PassengerSelectorProps> = ({ value, onChange }
                 />
                 <button
                   data-testid="passenger-count-increase"
+                  type="button"
                   className="w-8 h-8 rounded-full border border-gray-300 flex items-center justify-center"
                   onClick={handleIncreaseClick}
                 >

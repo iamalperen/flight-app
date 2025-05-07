@@ -113,7 +113,6 @@ export function useFlightSearchForm() {
     (e: React.FormEvent) => {
       e.preventDefault();
       if (flightsData && isValidRoute(flightsData, route.from, route.to)) {
-        // Add to recent searches
         if (route.from && route.to) {
           addSearch({ from: route.from, to: route.to });
         }
