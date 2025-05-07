@@ -1,19 +1,17 @@
 import React from 'react';
 import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
 
-import Header from './components/Header';
-import { FlightSearchProvider } from './context/FlightSearchContext';
-import CabinSelection from './pages/CabinSelection/CabinSelection';
-import FlightList from './pages/FlightList/FlightList';
-import Home from './pages/Home/Home';
+import { Header } from './components';
+import { FlightSearchProvider } from './context';
+import { CabinSelection, FlightList, Home } from './pages';
 
 const App: React.FC = () => {
   return (
     <FlightSearchProvider>
       <BrowserRouter>
-        <div className="min-h-screen bg-flightbg">
+        <div className="min-h-screen">
           <Header />
-          <div className="max-w-7xl mx-auto w-full px-4">
+          <div className="mx-auto w-full">
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/flights" element={<FlightList />} />

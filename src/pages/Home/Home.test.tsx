@@ -2,8 +2,8 @@ import { render, screen } from '@testing-library/react';
 import React from 'react';
 
 import { FlightSearchForm, PopularRoutes } from '../../components';
-import { useFlightSearchForm } from '../../hooks/useFlightSearchForm';
-import { AutocompleteOption, CabinType } from '../../types/flightSearch';
+import { useFlightSearchForm } from '../../hooks';
+import { AutocompleteOption, CabinType } from '../../types';
 
 import Home from './Home';
 
@@ -11,7 +11,7 @@ jest.mock('../../components', () => ({
   FlightSearchForm: jest.fn(() => <div data-testid="flight-search-form" />),
   PopularRoutes: jest.fn(() => <div data-testid="popular-routes" />),
 }));
-jest.mock('../../hooks/useFlightSearchForm', () => ({
+jest.mock('../../hooks', () => ({
   useFlightSearchForm: jest.fn(),
 }));
 

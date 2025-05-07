@@ -1,5 +1,10 @@
-export { getUniqueCities } from './getUniqueCities';
+export { generateFlightKey } from './generateFlightKey';
+export { getActualEcoFlyPrice } from './getActualEcoFlyPrice';
 export { getAvailableDestinations } from './getAvailableDestinations';
-export { getRouteInfo } from './getRouteInfo';
+export { getBusinessPrice } from './getBusinessPrice';
+export { getFarePrice } from './getFarePrice';
+export { getLowestEconomyPrice } from './getLowestEconomyPrice';
 export { getPopularRoutes } from './getPopularRoutes';
-export { isValidRoute } from './isValidRoute'; 
+export { getRouteInfo } from './getRouteInfo';
+export { getUniqueCities } from './getUniqueCities';
+export { isValidRoute } from './isValidRoute';

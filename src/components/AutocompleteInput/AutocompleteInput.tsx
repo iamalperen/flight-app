@@ -2,7 +2,7 @@ import { faSpinner } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useState, useRef, useEffect, useCallback } from 'react';
 
-import { AutocompleteOption } from '../../types/flightSearch';
+import { AutocompleteOption } from '../../types';
 
 export interface AutocompleteInputProps {
   value: string;
@@ -147,7 +147,7 @@ const AutocompleteInput: React.FC<AutocompleteInputProps> = ({
               className="block w-full text-left px-4 py-2 hover:bg-gray-100 cursor-pointer flex items-center"
               onClick={() => handleOptionClick(otherOptions[0])}
               tabIndex={0}
-              onKeyDown={(e) => handleKeyDown(e, otherOptions[0])}
+              onKeyDown={e => handleKeyDown(e, otherOptions[0])}
               data-testid="single-option"
             >
               <div className="font-medium text-gray-800">{otherOptions[0].label}</div>
@@ -178,7 +178,7 @@ const AutocompleteInput: React.FC<AutocompleteInputProps> = ({
                       className="block w-full text-left px-4 py-2 hover:bg-gray-100 cursor-pointer flex items-center"
                       onClick={() => handleOptionClick(option)}
                       tabIndex={0}
-                      onKeyDown={(e) => handleKeyDown(e, option)}
+                      onKeyDown={e => handleKeyDown(e, option)}
                       data-testid="recent-option"
                     >
                       <span className="text-gray-400 mr-2">🕒</span>
@@ -191,7 +191,9 @@ const AutocompleteInput: React.FC<AutocompleteInputProps> = ({
                 <>
                   <div
                     className="px-4 py-2 text-xs text-gray-500 bg-gray-50"
-                    data-testid={recentOptions.length > 0 ? "other-options-header" : "all-options-header"}
+                    data-testid={
+                      recentOptions.length > 0 ? 'other-options-header' : 'all-options-header'
+                    }
                   >
                     {recentOptions.length > 0 ? 'Diğer Şehirler' : 'Tüm Şehirler'}
                   </div>
@@ -201,7 +203,7 @@ const AutocompleteInput: React.FC<AutocompleteInputProps> = ({
                       className="block w-full text-left px-4 py-2 hover:bg-gray-100 cursor-pointer"
                       onClick={() => handleOptionClick(option)}
                       tabIndex={0}
-                      onKeyDown={(e) => handleKeyDown(e, option)}
+                      onKeyDown={e => handleKeyDown(e, option)}
                       data-testid="other-option"
                     >
                       <div className="font-medium text-gray-800">{option.label}</div>

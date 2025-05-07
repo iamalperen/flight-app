@@ -1,5 +1,4 @@
-import { FlightsData } from '../types/flight';
-import { AutocompleteOption } from '../types/flightSearch';
+import { AutocompleteOption, FlightsData } from '../types';
 
 export function isValidRoute(
   flightsData: FlightsData,
@@ -11,4 +10,4 @@ export function isValidRoute(
   return flights.some(
     f => f.originAirport.city.code === from.value && f.destinationAirport.city.code === to.value
   );
-} 
+}

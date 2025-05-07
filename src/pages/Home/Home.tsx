@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { FlightSearchForm, PopularRoutes } from '../../components';
-import { useFlightSearchForm } from '../../hooks/useFlightSearchForm';
+import { useFlightSearchForm } from '../../hooks';
 
 const Home: React.FC = () => {
   const form = useFlightSearchForm();
@@ -16,7 +16,7 @@ const Home: React.FC = () => {
   return (
     <div
       data-testid="home-page"
-      className="min-h-[calc(100vh-64px)] flex flex-col items-center justify-center px-4 bg-flightdark"
+      className="min-h-[calc(100vh-64px)] w-full bg-flightbg flex flex-col items-center justify-center bg-flightdark"
     >
       <div data-testid="home-content" className="flex flex-col items-center mt-12 w-full max-w-4xl">
         <h2 data-testid="home-greeting" className="text-white text-2xl font-light mb-1">

@@ -1,17 +1,32 @@
 import { render, screen } from '@testing-library/react';
 import React from 'react';
 
-import { FlightSearchContextType, useFlightSearch } from '../../context/FlightSearchContext';
+import { FlightSearchContextType, useFlightSearch } from '../../context';
 
 import Header from './Header';
 
 jest.mock('react-router-dom', () => ({
   ...jest.requireActual('react-router-dom'),
-  // eslint-disable-next-line jsx-a11y/anchor-is-valid
-  Link: (props: React.PropsWithChildren<Record<string, unknown>>) => <a href="#" {...props}>{props.children}</a>,
+  Link: (props: React.PropsWithChildren<Record<string, unknown>>) => (
+    <button
+      type="button"
+      onClick={e => e.preventDefault()}
+      style={{
+        background: 'none',
+        border: 'none',
+        padding: 0,
+        color: 'blue',
+        textDecoration: 'underline',
+        cursor: 'pointer',
+      }}
+      {...props}
+    >
+      {props.children}
+    </button>
+  ),
 }));
 
-jest.mock('../../context/FlightSearchContext', () => ({
+jest.mock('../../context', () => ({
   useFlightSearch: jest.fn(),
 }));
 

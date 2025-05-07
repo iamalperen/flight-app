@@ -1,7 +1,7 @@
 import { render, screen, fireEvent } from '@testing-library/react';
 import React from 'react';
 
-import { PassengerValue } from '../../types/flightSearch';
+import { PassengerValue } from '../../types';
 
 import PassengerSelector, { PassengerSelectorProps } from './PassengerSelector';
 

@@ -1,7 +1,6 @@
 import React, { createContext, useContext, useState, ReactNode } from 'react';
 
-import { Flight } from '../types/flight';
-import { AutocompleteOption, CabinType } from '../types/flightSearch';
+import { Flight, AutocompleteOption, CabinType } from '../types';
 
 type HeaderVariant = 'dark' | 'light';
 

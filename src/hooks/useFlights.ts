@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 
-import flightService from '../services/flightService';
-import { FlightsData } from '../types/flight';
+import { flightService } from '../services';
+import { FlightsData } from '../types';
 
 export const useFlights = () => {
   const [flightsData, setFlightsData] = useState<FlightsData | null>(null);

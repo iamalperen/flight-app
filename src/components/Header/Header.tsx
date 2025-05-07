@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import { useFlightSearch } from '../../context/FlightSearchContext';
+import { useFlightSearch } from '../../context';
 
 const Header: React.FC = () => {
   const { headerVariant } = useFlightSearch();

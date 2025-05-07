@@ -37,28 +37,6 @@ export interface FlightSearchFormProps {
   onSubmit: (e: React.FormEvent) => void;
 }
 
-export interface PopularRoute {
-  label: string;
-  value: string;
-  price?: number;
-  times?: string[];
-}
-
-export interface UseFlightSearchFormReturn {
-  from: AutocompleteOption | null;
-  to: AutocompleteOption | null;
-  passengers: PassengerCounts;
-  cabin: CabinType;
-  fromOptions: AutocompleteOption[];
-  toOptions: AutocompleteOption[];
-  loading: boolean;
-  handleFromChange: (city: AutocompleteOption | null) => void;
-  handleToChange: (city: AutocompleteOption | null) => void;
-  handlePassengersChange: (counts: PassengerCounts) => void;
-  handleCabinChange: (cabin: CabinType) => void;
-  handleSubmit: (e: React.FormEvent) => void;
-}
-
 export interface PassengerValue {
   count: number;
   cabin: CabinType;

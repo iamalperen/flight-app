@@ -1,11 +1,11 @@
 import { renderHook, waitFor } from '@testing-library/react';
 
-import flightService from '../services/flightService';
+import { flightService } from '../services';
 import { FlightsData } from '../types/flight';
 
 import { useFlights } from './useFlights';
 
-jest.mock('../services/flightService');
+jest.mock('../services');
 
 const flightServiceMock = jest.mocked(flightService);
 

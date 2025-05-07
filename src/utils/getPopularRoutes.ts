@@ -1,5 +1,4 @@
-import { FlightsData } from '../types/flight';
-import { AutocompleteOption } from '../types/flightSearch';
+import { AutocompleteOption, FlightsData } from '../types';
 
 import { getRouteInfo } from './getRouteInfo';
 

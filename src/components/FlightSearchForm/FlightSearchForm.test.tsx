@@ -1,9 +1,9 @@
 import { render, screen, fireEvent } from '@testing-library/react';
 import React from 'react';
 
-import { AutocompleteOption, PassengerValue } from '../../types/flightSearch';
-import {AutocompleteInputProps} from "../AutocompleteInput/AutocompleteInput";
-import {PassengerSelectorProps} from "../PassengerSelector/PassengerSelector";
+import { AutocompleteOption, PassengerValue } from '../../types';
+import { AutocompleteInputProps } from '../AutocompleteInput/AutocompleteInput';
+import { PassengerSelectorProps } from '../PassengerSelector/PassengerSelector';
 
 import FlightSearchForm, { FlightSearchFormProps } from './FlightSearchForm';
 
@@ -20,7 +20,10 @@ jest.mock('../AutocompleteInput', () => (props: AutocompleteInputProps) => (
 
 // eslint-disable-next-line react/display-name
 jest.mock('../PassengerSelector', () => (props: PassengerSelectorProps) => (
-  <button data-testid="mock-passenger-selector" onClick={() => props.onChange({ count: 2, cabin: 'business' })}>
+  <button
+    data-testid="mock-passenger-selector"
+    onClick={() => props.onChange({ count: 2, cabin: 'business' })}
+  >
     PassengerSelectorMock
   </button>
 ));
@@ -60,7 +63,6 @@ describe('FlightSearchForm', () => {
     // Arrange
     setup();
     // Act
-    // (no user interaction needed)
     // Assert
     expect(screen.getByTestId('from-input-container')).toBeInTheDocument();
     expect(screen.getByTestId('to-input-container')).toBeInTheDocument();
@@ -73,7 +75,6 @@ describe('FlightSearchForm', () => {
     // Arrange
     setup();
     // Act
-    // (no user interaction needed)
     // Assert
     expect(screen.getAllByDisplayValue('İstanbul')[0]).toBeInTheDocument();
     expect(screen.getAllByDisplayValue('Antalya')[0]).toBeInTheDocument();
@@ -84,7 +85,6 @@ describe('FlightSearchForm', () => {
     // Arrange
     setup({ from: null });
     // Act
-    // (no user interaction needed)
     // Assert
     expect(screen.getByTestId('flight-search-submit')).toBeDisabled();
   });
@@ -93,7 +93,6 @@ describe('FlightSearchForm', () => {
     // Arrange
     setup({ to: null });
     // Act
-    // (no user interaction needed)
     // Assert
     expect(screen.getByTestId('flight-search-submit')).toBeDisabled();
   });
@@ -102,7 +101,6 @@ describe('FlightSearchForm', () => {
     // Arrange
     setup({ loading: true });
     // Act
-    // (no user interaction needed)
     // Assert
     expect(screen.getByTestId('flight-search-submit')).toBeDisabled();
   });

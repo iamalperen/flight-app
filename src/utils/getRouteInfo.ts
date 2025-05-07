@@ -1,4 +1,4 @@
-import { City, Flight } from '../types/flight';
+import { City, Flight } from '../types';
 
 interface RouteInfo {
   from: City;
@@ -38,4 +38,4 @@ export function getRouteInfo(flights: Flight[]): RouteInfo[] {
   });
 
   return Array.from(routeMap.values());
-} 
+}

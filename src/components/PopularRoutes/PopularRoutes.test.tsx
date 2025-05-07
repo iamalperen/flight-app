@@ -13,7 +13,6 @@ describe('PopularRoutes', () => {
     // Arrange
     render(<PopularRoutes routes={mockRoutes} onSelect={jest.fn()} />);
     // Act
-    // (no user interaction needed)
     // Assert
     expect(screen.getByTestId('popular-routes')).toBeInTheDocument();
     expect(screen.getByTestId('popular-routes-title')).toBeInTheDocument();
@@ -26,7 +25,6 @@ describe('PopularRoutes', () => {
     // Arrange
     render(<PopularRoutes routes={mockRoutes} onSelect={jest.fn()} />);
     // Act
-    // (no user interaction needed)
     // Assert
     expect(screen.getByTestId('popular-route-price-IST-ESB')).toHaveTextContent('En düşük 1000 TL');
     expect(screen.getByTestId('popular-route-times-IST-ESB')).toHaveTextContent('10:00');

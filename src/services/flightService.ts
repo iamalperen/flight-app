@@ -1,5 +1,5 @@
 import mockData from '../data/flights.json';
-import { FlightsData } from '../types/flight';
+import { FlightsData } from '../types';
 
 class FlightService {
   async getFlights(): Promise<FlightsData> {

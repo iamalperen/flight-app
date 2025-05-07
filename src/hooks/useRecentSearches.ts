@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from 'react';
 
-import { AutocompleteOption } from '../types/flightSearch';
+import { AutocompleteOption } from '../types';
 
 const STORAGE_KEY = 'recentFlightSearches';
 const MAX_RECENT = 5;

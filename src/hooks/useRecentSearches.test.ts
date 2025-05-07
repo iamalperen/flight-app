@@ -1,6 +1,6 @@
 import { act, renderHook } from '@testing-library/react';
 
-import { AutocompleteOption } from '../types/flightSearch';
+import { AutocompleteOption } from '../types';
 
 import { useRecentSearches, RecentSearch } from './useRecentSearches';
 

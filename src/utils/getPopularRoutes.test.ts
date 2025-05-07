@@ -7,7 +7,6 @@ describe('getPopularRoutes', () => {
     // Arrange
     const flightsData = {
       flights: [
-        // 3 kez IST-ESB
         {
           originAirport: { city: { code: 'IST', name: 'İstanbul' } },
           destinationAirport: { city: { code: 'ESB', name: 'Ankara' } },

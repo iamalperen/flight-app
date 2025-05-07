@@ -2,7 +2,7 @@ import { faUser, faMinus, faPlus, faChair, faBriefcase } from '@fortawesome/free
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useRef, useState, useEffect } from 'react';
 
-import { CabinType, PassengerValue } from '../../types/flightSearch';
+import { CabinType, PassengerValue } from '../../types';
 
 export interface PassengerSelectorProps {
   value: PassengerValue;

@@ -2,7 +2,7 @@ import { faCalendarAlt, faPlaneDeparture, faPlaneArrival } from '@fortawesome/fr
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 
-import { AutocompleteOption, PassengerValue } from '../../types/flightSearch';
+import { AutocompleteOption, PassengerValue } from '../../types';
 import AutocompleteInput from '../AutocompleteInput';
 import PassengerSelector from '../PassengerSelector';
 

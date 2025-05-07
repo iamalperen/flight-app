@@ -1,8 +1,8 @@
-import { useState, useMemo, useCallback, useEffect } from 'react';
+import { useState, useMemo, useCallback, useEffect, FormEvent } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import { useFlightSearch } from '../context/FlightSearchContext';
-import { AutocompleteOption, CabinType } from '../types/flightSearch';
+import { useFlightSearch } from '../context';
+import { AutocompleteOption, CabinType } from '../types';
 import {
   getUniqueCities,
   getPopularRoutes,
@@ -110,7 +110,7 @@ export function useFlightSearchForm() {
   );
 
   const handleSubmit = useCallback(
-    (e: React.FormEvent) => {
+    (e: FormEvent) => {
       e.preventDefault();
       if (flightsData && isValidRoute(flightsData, route.from, route.to)) {
         if (route.from && route.to) {
