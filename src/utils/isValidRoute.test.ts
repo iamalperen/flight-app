@@ -1,18 +1,53 @@
+import {
+  FlightsData,
+  Flight,
+  Airport,
+  FareCategories,
+  City,
+  Country,
+  FareCategory,
+} from '../types/flight';
+import { AutocompleteOption } from '../types/flightSearch';
+
 import { isValidRoute } from './isValidRoute';
+
+const mockAirport = (cityCode: string, cityName: string): Airport => ({
+  name: `${cityName} Airport`,
+  code: cityCode,
+  city: { code: cityCode, name: cityName } as City,
+  country: { code: 'TR', name: 'Turkey' } as Country,
+});
+
+const mockFareCategories = (): FareCategories => ({
+  ECONOMY: { subcategories: [] } as FareCategory,
+  BUSINESS: { subcategories: [] } as FareCategory,
+});
+
+const mockFlight = (
+  originCityCode: string,
+  originCityName: string,
+  destCityCode: string,
+  destCityName: string
+): Flight => ({
+  originAirport: mockAirport(originCityCode, originCityName),
+  destinationAirport: mockAirport(destCityCode, destCityName),
+  arrivalDateTimeDisplay: '12:00',
+  departureDateTimeDisplay: '10:00',
+  flightDuration: '2h',
+  fareCategories: mockFareCategories(),
+});
 
 describe('isValidRoute', () => {
   it('returns true if a valid route exists', () => {
     // Arrange
-    const flightsData = {
-      flights: [
-        { originAirport: { city: { code: 'IST', name: 'İstanbul' } }, destinationAirport: { city: { code: 'ESB', name: 'Ankara' } } },
-      ]
+    const flightsData: FlightsData = {
+      flights: [mockFlight('IST', 'İstanbul', 'ESB', 'Ankara')],
     };
-    const from = { value: 'IST', label: 'İstanbul' };
-    const to = { value: 'ESB', label: 'Ankara' };
+    const from: AutocompleteOption = { value: 'IST', label: 'İstanbul' };
+    const to: AutocompleteOption = { value: 'ESB', label: 'Ankara' };
 
     // Act
-    const result = isValidRoute(flightsData as any, from, to);
+    const result = isValidRoute(flightsData, from, to);
 
     // Assert
     expect(result).toBe(true);
@@ -20,16 +55,14 @@ describe('isValidRoute', () => {
 
   it('returns false if no valid route exists', () => {
     // Arrange
-    const flightsData = {
-      flights: [
-        { originAirport: { city: { code: 'IST', name: 'İstanbul' } }, destinationAirport: { city: { code: 'ESB', name: 'Ankara' } } },
-      ]
+    const flightsData: FlightsData = {
+      flights: [mockFlight('IST', 'İstanbul', 'ESB', 'Ankara')],
     };
-    const from = { value: 'IST', label: 'İstanbul' };
-    const to = { value: 'ADB', label: 'İzmir' };
+    const from: AutocompleteOption = { value: 'IST', label: 'İstanbul' };
+    const to: AutocompleteOption = { value: 'ADB', label: 'İzmir' };
 
     // Act
-    const result = isValidRoute(flightsData as any, from, to);
+    const result = isValidRoute(flightsData, from, to);
 
     // Assert
     expect(result).toBe(false);
@@ -37,10 +70,12 @@ describe('isValidRoute', () => {
 
   it('returns false if from or to is null', () => {
     // Arrange
-    const flightsData = { flights: [] };
+    const flightsData: FlightsData = { flights: [] };
+    const toArg: AutocompleteOption = { value: 'ESB', label: 'Ankara' };
+    const fromArg: AutocompleteOption = { value: 'IST', label: 'İstanbul' };
 
     // Act & Assert
-    expect(isValidRoute(flightsData as any, null, { value: 'ESB', label: 'Ankara' })).toBe(false);
-    expect(isValidRoute(flightsData as any, { value: 'IST', label: 'İstanbul' }, null)).toBe(false);
+    expect(isValidRoute(flightsData, null, toArg)).toBe(false);
+    expect(isValidRoute(flightsData, fromArg, null)).toBe(false);
   });
-}); 
+});
