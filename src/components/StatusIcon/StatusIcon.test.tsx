@@ -105,13 +105,19 @@ describe('StatusIcon', () => {
 
     // Assert
     const successIcon = screen.getByTestId('success-icon');
-    expect(successIcon).toHaveAttribute('data-icon-id', expect.stringContaining('faCheck'));
+    expect(successIcon).toHaveAttribute(
+      'data-icon-id',
+      expect.stringContaining('"iconName":"check"')
+    );
 
     // Act
     rerender(<StatusIcon status="ERROR" />);
 
     // Assert
     const errorIcon = screen.getByTestId('error-icon');
-    expect(errorIcon).toHaveAttribute('data-icon-id', expect.stringContaining('faTimes'));
+    expect(errorIcon).toHaveAttribute(
+      'data-icon-id',
+      expect.stringContaining('"iconName":"xmark"')
+    );
   });
 });

@@ -15,8 +15,6 @@ describe('PromoCodeSection', () => {
     expect(screen.getByTestId('promo-section')).toBeInTheDocument();
     expect(screen.getByTestId('promo-label')).toHaveTextContent('Promosyon Kodu');
     expect(screen.getByTestId('promo-toggle')).toHaveAttribute('aria-checked', 'false');
-
-    // Info banner should not be visible when promo is inactive
     expect(screen.queryByTestId('promo-info-banner')).not.toBeInTheDocument();
   });
 
@@ -29,11 +27,9 @@ describe('PromoCodeSection', () => {
 
     // Assert
     expect(screen.getByTestId('promo-toggle')).toHaveAttribute('aria-checked', 'true');
-
-    // Info banner should be visible when promo is active
     const infoBanner = screen.getByTestId('promo-info-banner');
     expect(infoBanner).toBeInTheDocument();
-    expect(screen.getByTestId('promo-info-text')).toHaveTextContent(/50% indirimle/);
+    expect(screen.getByTestId('promo-info-text')).toHaveTextContent(/%50 indirimle/);
     expect(screen.getByTestId('promo-info-restriction')).toHaveTextContent(
       /seçim yapılamamaktadır/
     );
@@ -46,7 +42,6 @@ describe('PromoCodeSection', () => {
     // Act
     render(<PromoCodeSection promoCodeActive={false} onTogglePromo={onTogglePromo} />);
 
-    // Simulate a click event on the toggle button
     fireEvent.click(screen.getByTestId('promo-toggle'));
 
     // Assert
