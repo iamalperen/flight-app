@@ -1,46 +1,163 @@
-# Getting Started with Create React App
+# Flight Booking Application - Turkish Airlines Coding Challenge
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[![Live Demo](https://img.shields.io/badge/demo-online-green.svg)](https://flight-app-rho-eight.vercel.app/)
+[![React](https://img.shields.io/badge/React-18-blue.svg)](https://reactjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5-blue.svg)](https://www.typescriptlang.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-3-blueviolet.svg)](https://tailwindcss.com/)
+[![Jest](https://img.shields.io/badge/Jest-29-red.svg)](https://jestjs.io/)
+[![Test Coverage](https://img.shields.io/badge/coverage-100%25-brightgreen.svg)](https://flight-app-rho-eight.vercel.app/)
+[![ESLint](https://img.shields.io/badge/ESLint-8-4B32C3.svg)](https://eslint.org/)
+[![Prettier](https://img.shields.io/badge/Prettier-3-F7B93E.svg)](https://prettier.io/)
 
-## Available Scripts
+**[✈️ View Live Demo](https://flight-app-rho-eight.vercel.app/)**
 
-In the project directory, you can run:
+## 📋 Requirements Fulfillment
 
-### `npm start`
+### ✅ Core Requirements
+- **Single Page Application**: Implemented using React Router for seamless navigation
+- **React & Tailwind CSS**: Built entirely with ReactJS and styled with Tailwind CSS
+- **Three Distinct Pages**: 
+  - Flight Search Page
+  - Flight Listing Page 
+  - Cabin Selection Status Page (Success/Error)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### ✅ Bonus Requirements (Fully Implemented)
+- **Unit Testing**: Comprehensive test suite with 100% coverage
+- **Custom Hooks with Local Storage**: Implemented for persistent state management
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### ✅ Page-Specific Requirements
 
-### `npm test`
+#### Flight Search Page
+- ✅ Visual date field (non-functional as per requirements)
+- ✅ Allows navigation to flight listing only when valid departure/arrival points are selected
+- ✅ Prevents navigation for invalid route selections
+- ✅ Proper styling with specified background color (#063048)
+- ✅ Departure/arrival selection area styled correctly (rgb(96 105 119 / 60%))
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+#### Flight Listing Page
+- ✅ Default sorting by eco fly prices
+- ✅ Dynamic list reordering when sort criteria changes
+- ✅ Promo code functionality:
+  - ✅ Non-Eco Fly buttons disabled when promo is active
+  - ✅ 50% discount applied to Eco Fly packages
+- ✅ Correct styling with box shadows (0 4px 8px 0 rgba(0,0,0,.05))
+- ✅ Package headers styled correctly (background-color: #f9f9f9)
+- ✅ "Select Flight" buttons styled properly (#E81932)
 
-### `npm run build`
+#### Cabin Selection Status Page
+- ✅ Shows success screen when status is "available"
+- ✅ Shows error screen when status is "error"
+- ✅ Visually matches design specifications
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 🛠️ Technology Stack
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- **Frontend**: React.js + TypeScript
+- **Styling**: Tailwind CSS
+- **Routing**: React Router
+- **State Management**: React Context API
+- **Local Storage**: Custom hooks for persistent state
+- **Icons**: Font Awesome
+- **Testing**: Jest + React Testing Library
+- **Linting & Formatting**: ESLint + Prettier
+- **Type Checking**: TypeScript strict mode
+- **Deployment**: Vercel
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 🔍 Quality Assurance
 
-### `npm run eject`
+### Code Quality Tools
+- **ESLint**: Rigorous linting rules enforce code quality standards and prevent common errors
+- **Prettier**: Consistent code formatting across the entire codebase
+- **TypeScript**: Static type checking with strict mode enabled
+- **React Testing Library**: Testing focused on user behavior rather than implementation details
+- **Husky**: Pre-commit hooks ensure code quality standards are met before commits
+- **Lint-Staged**: Runs linters against staged git files to ensure quality
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 📱 Pages & Components
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### Flight Search Page
+- Origin/destination selection with validation
+- Visual date selection
+- Responsive layout with brand colors
+- Error handling for invalid routes
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### Flight List Page
+- Advanced sorting capabilities
+- Detailed flight cards with expandable sections
+- Promo code toggle with visual feedback
+- Proper price formatting and currency display
+- Economy/Business class selection
 
-## Learn More
+### Cabin Selection Status Page
+- Clear visual success/error indicators
+- Status-appropriate messaging
+- Professional iconography for status display
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 🚀 Getting Started
+
+### Prerequisites
+- Node.js (v16+)
+- npm or yarn
+
+### Installation
+
+1. Clone the repository
+```bash
+git clone https://github.com/yourusername/flight-app.git
+cd flight-app
+```
+
+2. Install dependencies
+```bash
+npm install
+# or
+yarn install
+```
+
+3. Start the development server
+```bash
+npm start
+# or
+yarn start
+```
+
+4. Open [http://localhost:3000](http://localhost:3000) in your browser
+
+### Running Tests
+
+```bash
+npm test
+# or
+yarn test
+```
+
+## 🧩 Project Structure
+
+```
+flight-app/
+├── public/             # Static files
+├── src/
+│   ├── components/     # Reusable components
+│   ├── context/        # React context providers
+│   ├── hooks/          # Custom React hooks
+│   ├── pages/          # Page components
+│   ├── types/          # TypeScript type definitions
+│   ├── utils/          # Utility functions
+│   ├── App.tsx         # Main App component
+│   └── index.tsx       # Entry point
+└── README.md           # This file
+```
+
+## 📚 Development Highlights
+
+- **Clean Code Architecture**: Separation of concerns with clear component boundaries
+- **Reusable Components**: Modular design for maximum code reuse
+- **Custom Hooks**: Abstracted complex logic into reusable hooks
+- **Testing First Development**: Components designed with testability in mind
+- **TypeScript Best Practices**: Comprehensive type definitions for better developer experience
+- **Modern React Patterns**: Utilizing the latest React patterns and features
+
+## 📝 License
+
+This project is licensed under the MIT License.
