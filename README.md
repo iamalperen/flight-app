@@ -1,4 +1,4 @@
-# Flight Booking Application - Turkish Airlines Coding Challenge
+# Flight Booking Application
 
 [![Live Demo](https://img.shields.io/badge/demo-online-green.svg)](https://flight-app-rho-eight.vercel.app/)
 [![React](https://img.shields.io/badge/React-18-blue.svg)](https://reactjs.org/)
