@@ -25,7 +25,7 @@ const Header: React.FC = () => {
           to="/"
           className={isDark ? 'text-white font-light text-sm' : 'text-gray-900 font-light text-sm'}
         >
-          turkishairlines.com
+          turkishairlines.com2
         </Link>
         <span
           data-testid="header-title"
